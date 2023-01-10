@@ -1,0 +1,89 @@
+dotnet new webapi -o PlatformService --framework "net5.0"
+
+docker build -t 749395/platformservice .
+
+docker run -p 8080:80 -d 749395/platformservice
+
+docker stop containerId
+
+docker start
+
+docker push 749395/platformservice (docker hub id/ service name)
+
+
+
+kubectl version
+
+kubectl apply -f platforms-depl.yaml
+
+kubectl get deployments
+
+kubectl get pods
+
+kubectl delete deployments platforms-depl
+
+kubectl apply -f platforms-np-srv.yaml
+
+docker build -t 749395/commandservice
+
+docker push 749395/commandservice
+
+docker run -p 8080:80 -d 749395/commandservice
+
+kubectl rollout  restart  deployment platforms-depl
+
+kubectl apply -f commands-depl.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.5.1/deploy/static/provider/cloud/deploy.yaml
+
+kubectl get namespace
+
+kubectl get pods --namespace=ingress-nginx
+
+kubectl get services --namespace=ingress-nginx
+
+
+
+
+Để sử dụng Kubernetes (k8s) để triển khai một ứng dụng sử dụng Net Core API và Angular, người dùng cần làm theo các bước sau:
+
+Cài đặt và cấu hình môi trường k8s trên máy cục bộ hoặc trên nền tảng đám mây.
+
+Tạo một file cấu hình cho các pod chứa các container của ứng dụng. File cấu hình này sẽ xác định các container cần được khởi tạo, các thông tin về bộ nhớ và CPU cần thiết cho mỗi container và cách liên kết giữa các container.
+
+Tạo một file cấu hình cho service của ứng dụng. Service sẽ quản lý các pod và cung cấp một địa chỉ IP có thể truy cập từ bên ngoài, giúp cho các pod có thể được truy cập được từ bên ngoài.
+
+Sử dụng công cụ kubectl để triển khai các file cấu hình vừa tạo lên k8s.
+
+Kiểm tra xem các pod và service có được triển khai thành công hay không bằng cách sử dụng lệnh kubectl get pods và kubectl get services.
+
+Truy cập vào ứng dụng bằng địa chỉ IP của service và kiểm tra xem ứng dụng có hoạt động bình thường hay không.
+
+
+
+Để sử dụng Kubernetes (k8s) và Docker để triển khai một ứng dụng lên web thật, người dùng có thể làm theo các bước sau:
+
+Cài đặt môi trường k8s trên máy chủ cục bộ hoặc trên nền tảng đám mây.
+
+Tạo một file Dockerfile để xác định cách tạo ra một image Docker từ mã nguồn của ứng dụng.
+
+Sử dụng công cụ Docker để tạo ra một image Docker từ file Dockerfile vừa tạo.
+
+Tạo một file cấu hình cho các pod chứa các container của ứng dụng. File cấu hình này sẽ xác định các container cần được khởi tạo, các thông tin về bộ nhớ và CPU cần thiết cho mỗi container và cách liên kết giữa các container.
+
+Tạo một file cấu hình cho service của ứng dụng. Service sẽ quản lý các pod và cung cấp một địa chỉ IP có thể truy cập từ bên ngoài, giúp cho các pod có thể được truy cập được từ bên ngoài.
+
+Sử dụng công cụ kubectl để triển khai các file cấu hình vừa tạo lên k8s.
+
+Kiểm tra xem các pod và service có được triển khai thành công hay không bằng cách sử dụng l
+
+
+
+
+
+
+
+
+
+
+
